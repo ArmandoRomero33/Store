@@ -7,7 +7,7 @@ import com.cursosant.android.stores.databinding.ActivityMainBinding
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
+class MainActivity : AppCompatActivity(), OnClickListener {
 
     private lateinit var mBinding: ActivityMainBinding
 
@@ -34,18 +34,16 @@ class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
         setupRecylcerView()
     }
 
-    private fun launchEditFragment(args: Bundle? = null) {
+    private fun launchEditFragment() {
         val fragment = EditStoreFragment()
-        if (args != null) fragment.arguments = args
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
 
         fragmentTransaction.add(R.id.containerMain, fragment)
-        fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
 
-        hideFab()
+        mBinding.fab.hide()
     }
 
     private fun setupRecylcerView() {
@@ -72,11 +70,8 @@ class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
     /*
     * OnClickListener
     * */
-    override fun onClick(storeId: Long) {
-        val args = Bundle()
-        args.putLong(getString(R.string.arg_id), storeId)
-
-        launchEditFragment(args)
+    override fun onClick(storeEntity: StoreEntity) {
+        TODO("Not yet implemented")
     }
 
     override fun onFavoriteStore(storeEntity: StoreEntity) {
@@ -96,20 +91,5 @@ class MainActivity : AppCompatActivity(), OnClickListener, MainAux {
                 mAdapter.delete(storeEntity)
             }
         }
-    }
-
-    /*
-    * MainAux
-    * */
-    override fun hideFab(isVisible: Boolean) {
-        if (isVisible) mBinding.fab.show() else mBinding.fab.hide()
-    }
-
-    override fun addStore(storeEntity: StoreEntity) {
-        mAdapter.add(storeEntity)
-    }
-
-    override fun updateStore(storeEntity: StoreEntity) {
-        mAdapter.update(storeEntity)
     }
 }
