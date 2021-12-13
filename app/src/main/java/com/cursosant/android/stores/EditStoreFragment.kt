@@ -28,6 +28,13 @@ class EditStoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val id = arguments?.getLong(getString(R.string.arg_id), 0)
+        if (id != null && id != 0L){
+            Toast.makeText(activity, id.toString(), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(activity, id.toString(), Toast.LENGTH_SHORT).show()
+        }
+
         mActivity = activity as? MainActivity
         mActivity?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         mActivity?.supportActionBar?.title = getString(R.string.edit_store_title_add)
@@ -57,7 +64,8 @@ class EditStoreFragment : Fragment() {
             R.id.action_save -> {
                 val store = StoreEntity(name = mBinding.etName.text.toString().trim(),
                         phone = mBinding.etPhone.text.toString().trim(),
-                        website = mBinding.etWebsite.text.toString().trim())
+                        website = mBinding.etWebsite.text.toString().trim(),
+                        photoUrl = mBinding.etPhotoUrl.text.toString().trim())
 
                 doAsync {
                     store.id = StoreApplication.database.storeDao().addStore(store)
