@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.cursosant.android.stores"
+        applicationId "com.example.stores"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -36,8 +36,7 @@ android {
         jvmTarget = '1.8'
     }
 }
-
-def room_version = "2.2.5"
+def room_version = "2.3.0"
 def anko_version = "0.10.8"
 
 dependencies {
@@ -47,15 +46,13 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
 
+
     implementation "androidx.room:room-runtime:$room_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$room_version"
 
     // Anko Commons
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
-
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -77,7 +77,6 @@
             android:gravity="center_vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilPhotoUrl"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -90,7 +89,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceCaption"
-                    android:textColor="@color/color_link"
                     android:minLines="@integer/lines_url_photo"
                     android:maxLines="@integer/lines_url_photo"
                     android:inputType="textMultiLine"/>

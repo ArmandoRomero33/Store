@@ -1,17 +1,15 @@
 <resources>
     <string name="app_name">Tiendas</string>
-    <string name="description_img_photo">Imagen de la Tienda</string>
-    <string name="description_store_add">Crear Tienda</string>
+    <string name="description_img_photo">Imagen de la tienda</string>
+    <string name="description_store_add">Crear tienda</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hint_name">Nombre de la Tienda</string>
+    <string name="hint_name">nombre de la tienda</string>
     <string name="helper_required">Requerido</string>
-    <string name="hint_phone">Teléfono</string>
-    <string name="hint_website">URL del Sitio Web</string>
-    <string name="hint_photo_url">URL de la Imagen</string>
-    <string name="edit_store_title_add">Crear Tienda</string>
+    <string name="hint_phone">teléfono</string>
+    <string name="hint_website">url del sitio web</string>
+    <string name="hint_photo_url">Url de la imagen</string>
+    <string name="edit_store_title_add">Crear tienda</string>
     <string name="menu_save">Save</string>
-    <string name="edit_store_message_save_success">Tienda Agregada correctamente</string>
-    <string name="arg_id">key_id</string>
-    <string name="edit_store_message_update_success">Tienda Actualizada</string>
+    <string name="edit_store_message_save_sucess">Tienda agregada correctamente.</string>
 </resources>
